@@ -22,6 +22,7 @@ local({
   if (basename(getwd()) != 'R') return()
   # do nothing if we are not under *nix; could read Windows registry, but who cares...
   if (!file.exists(mimefile <- '/etc/mime.types')) return()
+  message('* Updating mimemap.R')
 
   lines = readLines(mimefile, warn = FALSE)
   # remove comments and blank lines
@@ -39,7 +40,7 @@ local({
   # write R source code to the data directory; "hand-writing" instead dump(), to
   # make sure we can easily catch possible future differences in version control
   writeLines(c(
-    'mimemap <- c(',
+    'mimemap = c(',
     paste(sprintf(
       '%s = "%s"',
       # invalid names should be quoted using ``
@@ -104,7 +105,7 @@ guess_type = function(file, unknown = 'application/octet-stream',
                       empty = 'text/plain', mime_extra = mimeextra, subtype = '') {
   file = basename(file)
   # only need 'bar' from 'foo.bar'
-  if (length(i <- grep('[.]', file))) file[i] = tools::file_ext(file[i])
+  file = tools::file_ext(file)
   type = unname(c(mime_extra, mimemap)[tolower(file)])
   type[file == ''] = empty
   type[is.na(type)] = unknown  # unknown file extensions
