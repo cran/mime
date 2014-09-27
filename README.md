@@ -1,10 +1,12 @@
 # mime
 
+[![Build Status](https://travis-ci.org/yihui/mime.svg)](https://travis-ci.org/yihui/mime)
+
 This is an R package for mapping filename extensions to [MIME
 types](http://en.wikipedia.org/wiki/Internet_media_type), based on the data
 [derived](R/mime.R) from `/etc/mime.types`.
 
-```s
+```r
 library(mime)
 guess_type(c('a/b/c.html', 'd.pdf', 'e.odt', 'foo.docx', 'tex'))
 # [1] "text/html"                                                              
@@ -17,7 +19,7 @@ guess_type(c('a/b/c.html', 'd.pdf', 'e.odt', 'foo.docx', 'tex'))
 You can install the stable version from CRAN, or the development version from
 RForge:
 
-```s
+```r
 # CRAN version
 install.packages('mime', repos = 'http://cran.rstudio.com')
 # development version
