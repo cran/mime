@@ -1,3 +1,6 @@
+#' @import utils
+NULL
+
 #' Tables for mapping filename extensions to MIME types
 #'
 #' The data \code{mimemap} is a named character vector that stores the filename
@@ -56,6 +59,7 @@ local({
 #' @usage NULL
 #' @format NULL
 mimeextra = c(
+  geojson = "application/vnd.geo+json",
   md = "text/x-markdown",
   markdown = "text/x-markdown",
   r = "text/plain",
@@ -117,4 +121,11 @@ guess_type = function(file, unknown = 'application/octet-stream',
     type[i] = paste(type[i], subtype[i], sep = '; ')
   }
   type
+}
+
+if (.Platform$OS.type == 'windows') basename = function(path) {
+  if (length(path) == 0) return(path)
+  tryCatch(base::basename(path), error = function(e) {
+    vapply(strsplit(path, '[\\/]+'), tail, character(1), 1, USE.NAMES = FALSE)
+  })
 }
