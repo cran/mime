@@ -1,13 +1,13 @@
-077f542b18776a2f0be4be6ed033e9e3 *DESCRIPTION
+d4d5e25ac78d31d0e4fd5c6008e5bb31 *DESCRIPTION
 6c0844d0f403d7b8220f569b9abb1fe5 *NAMESPACE
 bcffd4359fa6f6fdb042991666ae92c9 *R/mime.R
 83901de62e9c8b7776b492ef40d24e61 *R/mimemap.R
-5ec980a6b02bfbea374050111fb47e45 *R/parse.R
+f0245edbff30e36812b41f0d57c5be63 *R/parse.R
 2698e3b146d16b386ffef03e0033ca7d *README.md
 d7aee0b63aca5a1ac343e0c15850ae80 *inst/NEWS.Rd
 40d372ef8a7fc89eb4c81b57b265f0c6 *man/guess_type.Rd
 20b9f8cad2d8ce501c9be8c44f09f744 *man/mimemap.Rd
 f8f83f528f8794764d58a8a57ebcf01e *man/parse_multipart.Rd
 7ac2a343553fd78681382b578acfe057 *src/init.c
-29b4222298101062679c7723a12f6f2d *src/rawmatch.c
+30b45730af99e45340a3f8d6723d6f0b *src/rawmatch.c
 7fe5cdfaa00ec7d6af8c44921cecb3ac *tests/mime.R
